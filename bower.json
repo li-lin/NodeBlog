@@ -1,0 +1,21 @@
+{
+  "name": "blogsystem",
+  "description": "bower.json for blogsystem web front",
+  "main": "",
+  "authors": [
+    "li-lin <lin.lee@live.cn>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/li-lin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.0.2",
+    "jquery": "2.0.3"
+  }
+}

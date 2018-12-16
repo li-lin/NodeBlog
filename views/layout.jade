@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= appTitle
+    script(src="/lib/jquery/jquery.min.js")
+    link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap-theme.min.css")
+    link(rel='stylesheet', href='/css/style.css')
+    script(src="/lib/bootstrap/dist/js/bootstrap.min.js")
+    script(src="js/blog.js")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body
+    #wrap
+      .content
+        h1.page-header=appTitle
+        p.lead Welcome to example from Express.js Experience by &nbsp;
+          a(href="http://weibo.com/li-lin") @li-lin
+          |. Please enjoy.
+    block page
+      block header
+        div
+          include includes/menu
+      block alert
+        .alert.alert-warning.hidden
+      .content
+        block content
+    block footer
+      footer
+        .container
+          p
+            | Copyright &copy; 2018 | Issues? Submit to 
+            a(href="https://github.com/li-lin/blog-express/issues") GitHub
+            | .

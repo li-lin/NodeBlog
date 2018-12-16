@@ -1,0 +1,105 @@
+h1=title
+p Welcome to the Practical Node.js!
+p #{body}
+p=body
+
+div(id="content", class="main")
+    a(href="http://expressjsguide,com", title="Express.js Guide",
+    target="_blank") Express.js Gruide
+    form(action="/login")
+        button(type="submit") Save
+    div(class="hero-unit") Learn Node.js!
+        a(href=url, data-active=isActive) Logout
+        label
+            input(type="checkbox", checked=isChecked)
+            |yes / no
+        label
+            input(type="radio", name="fighting", value="哼", checked) 
+            |yes
+        label
+            input(type="radio", name="fighting",  value="哈", checked=true) 
+            |no
+        label
+            input(type="radio", name="fighting",  value="嚯", checked=false) 
+            |unknown
+
+#main
+    p.lead.center
+        |webapplog: where code lives
+        #side-bar.pull-right
+            span.contact.span4
+                a(href="/contact") contact us
+
+div
+    | Jade is template engine.
+    br
+    | It can be used in Node.js and in the browser JavaScript.
+
+script.
+    console.log('Hello Jade!');
+    //- setTimeout(function(){
+    //-     window.location.href='http://www.baidu.com';
+    //- }, 2000);
+    console.log('Good bye!');
+style.
+    #main{
+        font-size:1.4em;
+        color:green;
+    }
+
+//Jade中嵌入JavaScript
+//- - var arr=['<a>','<b>','<c>']
+//- ul
+//-     - for(var i=0;i<arr.length;i++)
+//-         li
+//-             span=i
+//-             span!='unescaped: ' + arr[i] + ' vs. '
+//-             span='escaped: ' + arr[i]
+div
+    -var user={}
+    -user.admin=Math.random()>0.5
+    if user.admin
+        button(class="launch") Launch Spacecraft
+    else
+        button(class="login") Log In
+    -var languages=['php','node','ruby']
+    div
+        each value, index in languages
+            p=index+'.'+value
+    -languages={'php':-1,'node':2,'ruby':1}
+    div
+        each value, key in languages
+            p=key+':'+value
+
+//-读取变量
+-var  title='Express.js Guide' 
+p Read the #{title} in PDF, MOBI and EPUB
+//- case，类似switch
+-var coins=Math.round(Math.random()*10)
+case coins
+    when 0
+        p You have no money
+    when 1
+        p You have a coin
+    default
+        p You have #{coins} coins!
+//-函数mixin
+mixin row(items)
+  tr
+    each item, key in items
+      td=item
+mixin head(heads)
+  tr
+    each item, index in heads
+      th=item
+mixin table(tableData)
+  table
+    +head(heads)
+    each row, index in tableData
+      +row(row)
+-var heads=['name','version']
+-var node=[{name:'express',ver:'4.16.0'},{name:'hapi',ver:'1.2.1'},{name:'derby',ver:'0.99.1'}]
++table(node)
+-heads=['name']
+-var js=[{name:'backbone'},{name:'angular'},{name:'ember'}]
++table(js)
