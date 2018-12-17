@@ -1,21 +1,30 @@
 extends layout
 
 block page
-  -var menu = 'post'
-  block content
-    h2 Post an Article
-    div=error
-    .col-md-8
-      form(action="/post", method="POST", role="form")
-        .form-group
-          label(for="title") Title
-          input#title.form-control(name="title", type="text", placeholder="JavaScript is good")
-        .form-group
-          label(for="slug") Slug
-          input#slug.form-control(name="slug", type="text", placeholder="js-good")
-          span.help-block This string will be used in the URL。
-        .form-group
-          lable(for="text") Text
-          textarea#text.form-control(name="text", rows="5", placeholder="Text")
-        p
-          button.btn.btn-primary(type="submit") Save
+  -var menu='post'
+block content
+  h2 Post an Article  
+  .container
+    if error
+      .alert.alert-danger.alert-dismissible(role="alert")
+        button.close(type="button", data-dismiss="alert", aria-label="Close")
+          span(aria-hidden="true") &times;
+        |#{error}
+    else if info
+      .alert.alert-info.alert-dismissible(role="alert")
+        button.close(type="button", data-dismiss="alert", aria-label="Close")
+          span(aria-hidden="true") &times;
+        |#{info}      
+    form(action="/post", method="POST", role="form")
+      .form-group
+        label(for="title") Title
+        input#title.form-control(name="title", type="text", placeholder="JavaScript is good")
+      .form-group
+        label(for="slug") Slug
+        input#slug.form-control(name="slug", type="text", placeholder="js-good")
+        span.help-block This string will be used in the URL。
+      .form-group
+        lable(for="text") Text
+        textarea#text.form-control(name="text", rows="5", placeholder="Text")
+      p
+        button.btn.btn-primary(type="submit") Save

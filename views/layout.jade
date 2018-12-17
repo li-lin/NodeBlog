@@ -11,19 +11,19 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body
     #wrap
-      .content
+      .container
         h1.page-header=appTitle
         p.lead Welcome to example from Express.js Experience by &nbsp;
           a(href="http://weibo.com/li-lin") @li-lin
           |. Please enjoy.
-    block page
-      block header
-        div
-          include includes/menu
-      block alert
-        .alert.alert-warning.hidden
-      .content
-        block content
+        block page
+        block header
+          div
+            include includes/menu
+        block alert
+          .alert.alert-warning.hidden
+        .content
+          block content
     block footer
       footer
         .container
