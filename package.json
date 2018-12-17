@@ -9,6 +9,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "jade": "^1.11.0",
+    "mongodb": "^2.2.33",
     "mongoskin": "^2.1.0",
     "stylus": "^0.54.5"
   },
